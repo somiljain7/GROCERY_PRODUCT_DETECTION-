@@ -1,0 +1,100 @@
+<html>
+<head>
+  <title>OBJECT DETECTION DEMONSTRATION</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script>
+    function showLoading() {
+      $("#loading").show();
+    }
+  </script>
+  <style>
+    .logo {
+      height: 100px;
+      width: auto;
+    }
+
+    .navbar-brand {
+      display: flex;
+
+    }
+
+    .navbar-text {
+      font-size: 1.5rem;
+      margin-left: auto;
+      margin-right: auto;
+      border: 1px solid #000;
+      padding: 8px 16px;
+    }
+
+    .spinner-container {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .spinner {
+      animation: spin 1s linear infinite;
+      border: 2px solid #00ffff;
+      border-top-color: #888;
+      border-radius: 50%;
+      height: 24px;
+      width: 24px;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="loading" style="display:none;">
+    <div class="spinner-container">
+      <div class="spinner"></div>
+    </div>
+  </div>
+  <div class="container">
+    {% if success %}
+    <div class="alert alert-success mt-5" role="alert">
+      File successfully processed by shell script
+    </div>
+    {% else %}
+
+    <h1 class="text-center"><b>Grocery Product Detection</h1>
+    <hr size="2">
+    <p>Detect products in retail shelves</p>
+    <hr size="2">
+
+    <form action="/" method="post" enctype="multipart/form-data" class="mx-auto mt-5" style="width: 500px;">
+      <div class="form-group">
+
+        <h5><center><b>CHOOSE ANY IMAGE FILE</b></center><br></h5>
+        <label for="example-images">Choose Example Images:</label>
+        <select name="EXAMPLE_IMAGES" id="example-images" class="form-control">
+          <option value="sample_images\1.jpg">Sample 1.</option>
+          <option value="sample_images\2.jpg">Sample 2.</option>
+          <option value="sample_images\3.jpg">Sample 3.</option>
+        </select>
+        <hr size="2">
+	<center>OR</center>
+	<hr size="2">
+        <h5><b>UPLOAD IMAGE FILE FOR <i>Grocery Product Detection</i></h5>
+
+	<br>
+        <input type="file" name="file" id="audio-file" class="form-control-file">
+
+      </div>
+      <button type="submit" name="submit" value="process" class="btn btn-primary mt-3" onclick="showLoading()">SUBMIT for proceeding with Object detection</button>
+      <br><br><br>
+
+    </form>
+    {% endif %}
+  </div>
+</body>
+</html>
+

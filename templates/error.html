@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Error</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            margin-top: 100px;
+        }
+        .container {
+            max-width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CRASHED</h1>
+	<img src='../static/error.png' class="img-fluid" alt="Error Image">
+        <a href="{{ url_for('index') }}" class="btn btn-primary">HOME</a>
+    </div>
+</body>
+</html>
+

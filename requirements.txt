@@ -1,0 +1,8 @@
+flask
+matplotlib
+numpy
+requests
+opencv-python
+imread-from-url
+onnxruntime-gpu
+plotly

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OBJECT DETECTION DEMONSTRATION</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script>
+    function showLoading() {
+      $("#loading").show();
+    }
+  </script>
+  <style>
+    .logo {
+      height: 100px;
+      width: auto;
+    }
+
+    .navbar-brand {
+      display: flex;
+
+    }
+
+    .navbar-text {
+      font-size: 1.5rem;
+      margin-left: auto;
+      margin-right: auto;
+      border: 1px solid #000;
+      padding: 8px 16px;
+    }
+
+    .spinner-container {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .spinner {
+      animation: spin 1s linear infinite;
+      border: 2px solid #00ffff;
+      border-top-color: #888;
+      border-radius: 50%;
+      height: 24px;
+      width: 24px;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+
+
+ <meta charset="utf-8" />
+</head><body> 
+<center><h1>GROCERY PRODUCT DETECTION </h1></center>
+<div align="middle">
+  <img src="../static/retail_grocery.drawio.png"  />
+  <br>
+  <br>
+
+
+ <div>
+        {{ fig_html|safe }}
+ </div>
+ </div>     
+ <center> <a href="/download-json" class="btn">
+  <b><button type="submit" name="submit" value="process" class="btn btn-primary mt-3" onclick="showLoading()">DOWNLOAD JSON</button>
+</a>
+
+
+<a href="{{url_for('index')}}"><b><button type="submit" name="submit" value="process" class="btn btn-primary mt-3" onclick="showLoading()">BACK</button></a></center>
+</div>
+
+</body>
+</html>
